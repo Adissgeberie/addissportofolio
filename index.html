@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full-Stack Developer portfolio — PHP, C# / .NET, JavaScript, MySQL, and desktop development expertise. Featured projects include a Web Job Board, Android Diagnostic App, and Monetized Payment Gateway." />
+  <meta name="keywords" content="Full Stack Developer, PHP, C#, .NET, JavaScript, MySQL, Visual Studio, Web Developer Portfolio" />
+  <meta name="author" content="Alex Rivera" />
+  <meta property="og:title" content="Alex Rivera — Full-Stack Developer" />
+  <meta property="og:description" content="Modern full-stack developer portfolio specialising in PHP, C# / .NET, JavaScript and MySQL." />
+  <meta property="og:type" content="website" />
+  <title>Alex Rivera — Full-Stack Developer</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Font Awesome icons (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eecJDVq/rAMRSgGNPEfGFXWLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" id="nav-logo" aria-label="Alex Rivera — Home">
+        Alex<span>Rivera</span>
+      </a>
+
+      <!-- Flat navigation list (desktop) -->
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="nav-links-desktop">
+          <li><a href="#home"     id="nav-home">Home</a></li>
+          <li><a href="#about"    id="nav-about">About</a></li>
+          <li><a href="#skills"   id="nav-skills">Skills</a></li>
+          <li><a href="#projects" id="nav-projects">Projects</a></li>
+          <li><a href="#contact"  id="nav-contact-link" class="nav-cta">Hire Me</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <nav class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#home">🏠 Home</a></li>
+      <li><a href="#about">👤 About</a></li>
+      <li><a href="#skills">⚡ Skills</a></li>
+      <li><a href="#projects">🚀 Projects</a></li>
+      <li><a href="#contact">✉️ Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section id="home" aria-label="Hero introduction">
+    <!-- Animated background -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+
+        <!-- Left column — text -->
+        <div class="hero-text">
+          <p class="hero-badge">Available for freelance &amp; contracts</p>
+
+          <h1 class="hero-title">
+            Hi, I'm <br />
+            <span class="gradient-text">Alex Rivera</span>
+          </h1>
+
+          <div class="hero-typing-wrapper" aria-live="polite">
+            <span class="prefix">I build</span>
+            <span id="typed-text">Full-Stack Solutions</span>
+          </div>
+
+          <p class="hero-description">
+            A passionate full-stack developer with deep expertise in PHP, C# / .NET, JavaScript, MySQL,
+            and desktop tooling. I craft robust, scalable web applications and intuitive user experiences
+            from first design to final deployment.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="btn-view-projects">
+              <i class="fa-solid fa-rocket"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-outline" id="btn-hire-me">
+              <i class="fa-solid fa-paper-plane"></i> Hire Me
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Key statistics">
+            <div class="stat-item">
+              <span class="stat-num" data-target="6" data-suffix="+">0+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="40" data-suffix="+">0+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="25" data-suffix="+">0+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="100" data-suffix="%">0%</span>
+              <span class="stat-label">Dedication</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column — avatar -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-avatar-wrap">
+            <div class="avatar-glow"></div>
+            <div class="avatar-ring"><div class="avatar-ring-inner"></div></div>
+            <img
+              src="assets/images/avatar.jpg"
+              alt="Alex Rivera — Full-Stack Developer"
+              class="avatar-img"
+              width="380" height="380"
+            />
+            <!-- Floating technology chips -->
+            <div class="hero-chip chip-php"><i class="fa-brands fa-php"></i> PHP 8</div>
+            <div class="hero-chip chip-cs"><i class="fa-brands fa-microsoft"></i> C#</div>
+            <div class="hero-chip chip-net">⚙️ .NET 8</div>
+            <div class="hero-chip chip-sql">🗄️ MySQL</div>
+          </div>
+        </div>
+
+      </div><!-- /hero-content -->
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       ABOUT SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section id="about" aria-label="About me">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Who I Am</span>
+        <h2 class="section-title">Crafting Digital <span>Experiences</span></h2>
+        <p class="section-subtitle">
+          From backend APIs to responsive frontends — I engineer solutions that scale, perform, and delight.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Image -->
+        <div class="about-img-wrap reveal reveal-delay-1">
+          <div class="about-img-frame">
+            <img
+              src="assets/images/avatar.jpg"
+              alt="Alex Rivera working at a desk"
+              width="400" height="500"
+              loading="lazy"
+            />
+            <div class="about-img-overlay"></div>
+          </div>
+          <div class="about-xp-badge" aria-label="6 years of experience">
+            <span class="num" data-target="6" data-suffix="+">0+</span>
+            <span class="label">Years<br>Exp.</span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="about-text reveal reveal-delay-2">
+          <span class="section-label" style="margin-bottom:20px;">My Story</span>
+          <div class="about-bio">
+            <p>
+              I'm <strong>Alex Rivera</strong>, a full-stack developer who thrives at the intersection of
+              elegant design and solid engineering. With over 6 years of professional experience, I've built
+              everything from high-traffic job portals and payment gateways to native Android utilities and
+              desktop tooling.
+            </p>
+            <p>
+              My primary stack revolves around <strong>PHP 8</strong>, <strong>C# / .NET 8</strong>,
+              <strong>JavaScript (ES2022)</strong>, and <strong>MySQL</strong>. I work across the full
+              stack — architecting REST APIs, designing relational schemas, and polishing responsive UIs —
+              with <strong>Visual Studio 2026</strong> as my daily driver.
+            </p>
+            <p>
+              I'm passionate about clean code, pragmatic architecture, and shipping products that solve real
+              problems for real people.
+            </p>
+          </div>
+
+          <!-- Highlight cards -->
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon">🌐</div>
+              <h4>Web Development</h4>
+              <p>Full-stack web apps, REST APIs, and SaaS platforms.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🗄️</div>
+              <h4>Database Design</h4>
+              <p>Normalised schemas, query optimisation, migrations.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">📱</div>
+              <h4>Mobile & Desktop</h4>
+              <p>Android apps &amp; Windows desktop tools with Visual Studio.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🔐</div>
+              <h4>Secure Systems</h4>
+              <p>Payment gateways, auth flows, and encrypted data pipelines.</p>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#projects" class="btn btn-primary" id="btn-about-projects">
+              <i class="fa-solid fa-folder-open"></i> See My Work
+            </a>
+            <a href="#contact" class="btn btn-outline" id="btn-about-contact">
+              <i class="fa-solid fa-envelope"></i> Get In Touch
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /about-grid -->
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SKILLS SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section id="skills" aria-label="Technical skills">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Expertise</span>
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <p class="section-subtitle">
+          A battle-tested toolkit built across 6+ years of real-world full-stack development.
+        </p>
+      </div>
+
+      <!-- Skill category cards -->
+      <div class="skills-grid">
+
+        <!-- Backend -->
+        <div class="skills-category reveal reveal-delay-1">
+          <div class="skills-category-header">
+            <div class="skills-category-icon purple">⚙️</div>
+            <div>
+              <p class="cat-title">Backend Development</p>
+              <p class="cat-desc">Server-side logic, APIs &amp; runtime environments</p>
+            </div>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag"><span class="skill-dot"></span>PHP 8.x</span>
+            <span class="skill-tag"><span class="skill-dot"></span>C# / .NET 8</span>
+            <span class="skill-tag"><span class="skill-dot"></span>ASP.NET Core</span>
+            <span class="skill-tag"><span class="skill-dot"></span>REST APIs</span>
+            <span class="skill-tag"><span class="skill-dot"></span>Laravel</span>
+            <span class="skill-tag"><span class="skill-dot"></span>Node.js</span>
+            <span class="skill-tag"><span class="skill-dot"></span>JSON / XML</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skills-category reveal reveal-delay-2">
+          <div class="skills-category-header">
+            <div class="skills-category-icon teal">🎨</div>
+            <div>
+              <p class="cat-title">Frontend Development</p>
+              <p class="cat-desc">UI, interactivity &amp; user experience</p>
+            </div>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag teal"><span class="skill-dot"></span>HTML5</span>
+            <span class="skill-tag teal"><span class="skill-dot"></span>CSS3</span>
+            <span class="skill-tag teal"><span class="skill-dot"></span>JavaScript ES2022</span>
+            <span class="skill-tag teal"><span class="skill-dot"></span>jQuery</span>
+            <span class="skill-tag teal"><span class="skill-dot"></span>Responsive Design</span>
+            <span class="skill-tag teal"><span class="skill-dot"></span>Fetch / AJAX</span>
+            <span class="skill-tag teal"><span class="skill-dot"></span>Bootstrap 5</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skills-category reveal reveal-delay-3">
+          <div class="skills-category-header">
+            <div class="skills-category-icon pink">🗄️</div>
+            <div>
+              <p class="cat-title">Database &amp; Storage</p>
+              <p class="cat-desc">Data modelling, querying &amp; optimisation</p>
+            </div>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag pink"><span class="skill-dot"></span>MySQL</span>
+            <span class="skill-tag pink"><span class="skill-dot"></span>MSSQL</span>
+            <span class="skill-tag pink"><span class="skill-dot"></span>SQLite</span>
+            <span class="skill-tag pink"><span class="skill-dot"></span>Entity Framework</span>
+            <span class="skill-tag pink"><span class="skill-dot"></span>Stored Procedures</span>
+            <span class="skill-tag pink"><span class="skill-dot"></span>Schema Design</span>
+            <span class="skill-tag pink"><span class="skill-dot"></span>Query Optimisation</span>
+          </div>
+        </div>
+
+        <!-- Tooling -->
+        <div class="skills-category reveal reveal-delay-4">
+          <div class="skills-category-header">
+            <div class="skills-category-icon orange">🛠️</div>
+            <div>
+              <p class="cat-title">Desktop &amp; Tooling</p>
+              <p class="cat-desc">IDEs, platforms &amp; development workflow</p>
+            </div>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag orange"><span class="skill-dot"></span>Visual Studio 2026</span>
+            <span class="skill-tag orange"><span class="skill-dot"></span>VS Code</span>
+            <span class="skill-tag orange"><span class="skill-dot"></span>Android Studio</span>
+            <span class="skill-tag orange"><span class="skill-dot"></span>Git / GitHub</span>
+            <span class="skill-tag orange"><span class="skill-dot"></span>XAMPP</span>
+            <span class="skill-tag orange"><span class="skill-dot"></span>Postman</span>
+            <span class="skill-tag orange"><span class="skill-dot"></span>Docker</span>
+          </div>
+        </div>
+
+      </div><!-- /skills-grid -->
+
+      <!-- Proficiency bars -->
+      <div class="skills-proficiency reveal reveal-delay-2" style="margin-top:40px;">
+        <p class="proficiency-title">Core Language Proficiency</p>
+        <div class="prof-bars">
+          <div class="prof-bar-item">
+            <div class="prof-bar-header">
+              <span class="prof-bar-name">PHP 8.x</span>
+              <span class="prof-bar-pct">92%</span>
+            </div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-pct="92"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-header">
+              <span class="prof-bar-name">C# / .NET 8</span>
+              <span class="prof-bar-pct">88%</span>
+            </div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-pct="88"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-header">
+              <span class="prof-bar-name">JavaScript (ES2022)</span>
+              <span class="prof-bar-pct">85%</span>
+            </div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-pct="85"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-header">
+              <span class="prof-bar-name">MySQL</span>
+              <span class="prof-bar-pct">90%</span>
+            </div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-pct="90"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-header">
+              <span class="prof-bar-name">HTML5 / CSS3</span>
+              <span class="prof-bar-pct">95%</span>
+            </div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-pct="95"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       PROJECTS SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section id="projects" aria-label="Featured projects">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <p class="section-subtitle">
+          Handpicked works that showcase my full-stack capabilities — from database to UI.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 — Job Board -->
+        <article class="project-card reveal reveal-delay-1" aria-label="Web Job Board project">
+          <div class="project-img-wrap">
+            <img
+              src="assets/images/project-jobboard.jpg"
+              alt="Web Job Board platform screenshot"
+              loading="lazy"
+              width="600" height="338"
+            />
+            <div class="project-img-overlay"></div>
+            <div class="project-img-actions">
+              <a href="#" class="project-img-btn" id="jobboard-live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="#" class="project-img-btn" id="jobboard-code">
+                <i class="fa-brands fa-github"></i> Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-number">PROJECT — 01</p>
+            <h3 class="project-title">Web Job Board Platform</h3>
+            <p class="project-desc">
+              A full-featured job listing and application system built from scratch. Employers post roles
+              with rich descriptions, set salary bands, and manage applicants through a dedicated dashboard.
+              Job seekers search, filter by location/category, and apply with a single click.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PHP 8</span>
+              <span class="project-tag teal">MySQL</span>
+              <span class="project-tag">REST API</span>
+              <span class="project-tag teal">JavaScript</span>
+              <span class="project-tag">Bootstrap 5</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-status">Live &amp; Active</span>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View source on GitHub" id="jobboard-gh-link">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#" class="project-link" title="Open live demo" id="jobboard-demo-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 — Android Diagnostics -->
+        <article class="project-card reveal reveal-delay-2" aria-label="Android Diagnostic App project">
+          <div class="project-img-wrap">
+            <img
+              src="assets/images/project-android.jpg"
+              alt="Android hardware diagnostic app mockup"
+              loading="lazy"
+              width="600" height="338"
+            />
+            <div class="project-img-overlay"></div>
+            <div class="project-img-actions">
+              <a href="#" class="project-img-btn" id="android-store">
+                <i class="fa-brands fa-google-play"></i> Play Store
+              </a>
+              <a href="#" class="project-img-btn" id="android-code">
+                <i class="fa-brands fa-github"></i> Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-number">PROJECT — 02</p>
+            <h3 class="project-title">Android Diagnostic App</h3>
+            <p class="project-desc">
+              A native Android application for real-time hardware diagnostics. Reads CPU, RAM, GPU, and
+              battery sensors via system APIs, displays live data on an intuitive dashboard, and exports
+              timestamped diagnostic reports to PDF for technicians.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag pink">Java / Kotlin</span>
+              <span class="project-tag">Android SDK</span>
+              <span class="project-tag teal">SQLite</span>
+              <span class="project-tag pink">Bluetooth API</span>
+              <span class="project-tag">PDF Export</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-status">In Production</span>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View source on GitHub" id="android-gh-link">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#" class="project-link" title="Open on Play Store" id="android-play-link">
+                  <i class="fa-brands fa-google-play"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 — Payment Gateway -->
+        <article class="project-card reveal reveal-delay-3" aria-label="Monetized Payment Gateway project">
+          <div class="project-img-wrap">
+            <img
+              src="assets/images/project-gateway.jpg"
+              alt="Monetized payment gateway dashboard"
+              loading="lazy"
+              width="600" height="338"
+            />
+            <div class="project-img-overlay"></div>
+            <div class="project-img-actions">
+              <a href="#" class="project-img-btn" id="gateway-live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="#" class="project-img-btn" id="gateway-code">
+                <i class="fa-brands fa-github"></i> Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-number">PROJECT — 03</p>
+            <h3 class="project-title">Monetized Payment Gateway</h3>
+            <p class="project-desc">
+              A secure, multi-merchant payment processing system built on C# / .NET 8 and ASP.NET Core.
+              Integrates Stripe &amp; PayPal via REST, handles subscription billing with webhooks, and
+              provides a revenue analytics dashboard showing real-time transaction volume and earnings.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">C# / .NET 8</span>
+              <span class="project-tag teal">MySQL</span>
+              <span class="project-tag">Stripe API</span>
+              <span class="project-tag teal">ASP.NET Core</span>
+              <span class="project-tag">Webhooks</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-status">Revenue Generating</span>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View source on GitHub" id="gateway-gh-link">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#" class="project-link" title="Open live demo" id="gateway-demo-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CONTACT SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact form">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Let's Connect</span>
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="section-subtitle">
+          Have a project in mind or want to discuss an opportunity? I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left — contact info -->
+        <div class="contact-info reveal reveal-delay-1">
+          <p class="contact-info-text">
+            I'm currently available for freelance projects, contract engagements, and full-time roles.
+            Whether you need a scalable web app, a payment integration, or a custom desktop tool —
+            let's build it together.
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <p class="contact-item-value">hello@alexrivera.dev</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <p class="contact-item-value">Remote — Worldwide</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">⏱️</div>
+              <div>
+                <p class="contact-item-label">Response Time</p>
+                <p class="contact-item-value">Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-btn github"   id="social-github"   title="GitHub"   aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" class="social-btn linkedin" id="social-linkedin" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-btn twitter"  id="social-twitter"  title="Twitter"  aria-label="Twitter / X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="social-btn"          id="social-stackoverflow" title="Stack Overflow" aria-label="Stack Overflow"
+               style="--hover-c:#f48024;">
+              <i class="fa-brands fa-stack-overflow"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — contact form -->
+        <div class="contact-form-wrap reveal reveal-delay-2">
+          <div id="form-content">
+            <h3 class="form-title">Send a Message</h3>
+            <p class="form-subtitle">All fields marked are required.</p>
+
+            <form id="contact-form" novalidate aria-label="Contact form">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-name">Full Name</label>
+                  <input
+                    type="text"
+                    id="cf-name"
+                    name="name"
+                    placeholder="Jane Smith"
+                    autocomplete="name"
+                    required
+                  />
+                  <span class="form-error-msg" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="cf-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="cf-email"
+                    name="email"
+                    placeholder="jane@example.com"
+                    autocomplete="email"
+                    required
+                  />
+                  <span class="form-error-msg" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cf-subject">Subject</label>
+                <input
+                  type="text"
+                  id="cf-subject"
+                  name="subject"
+                  placeholder="Project enquiry / Collaboration / Hire"
+                  required
+                />
+                <span class="form-error-msg" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="cf-message">Message</label>
+                <textarea
+                  id="cf-message"
+                  name="message"
+                  placeholder="Tell me about your project, timeline, and budget…"
+                  required
+                ></textarea>
+                <span class="form-error-msg" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit" id="btn-send-msg">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+
+            </form>
+          </div><!-- /#form-content -->
+
+          <!-- Success state -->
+          <div class="form-success" id="form-success" aria-live="polite">
+            <div class="form-success-icon">🎉</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I'll be back in touch within 24 hours.</p>
+          </div>
+        </div><!-- /.contact-form-wrap -->
+
+      </div><!-- /contact-grid -->
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <a href="#home" class="footer-logo" aria-label="Back to top">AlexRivera.dev</a>
+
+        <p class="footer-text">
+          Crafted with <span>♥</span> using HTML5, CSS3 &amp; Vanilla JS &nbsp;·&nbsp;
+          &copy; <span id="footer-year">2026</span> Alex Rivera. All rights reserved.
+        </p>
+
+        <!-- Flat footer nav -->
+        <nav aria-label="Footer navigation">
+          <ul class="footer-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Dynamic footer year -->
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
