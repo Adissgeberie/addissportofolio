@@ -3,233 +3,610 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Full-Stack Developer portfolio — PHP, JavaScript, MySQL, ASP.NET, and VB.NET desktop expertise. Featured projects include Clinic Systems, Job Boards, and Enterprise Portals." />
-  <meta name="keywords" content="Full Stack Developer, PHP, C#, .NET, VB.NET, JavaScript, MySQL, Visual Studio, Web Developer Portfolio" />
-  <meta name="author" content="Gebre Maryam Gebru" />
-  <meta property="og:title" content="Gebre Maryam Gebru — Full-Stack Developer" />
-  <meta property="og:description" content="Full-stack developer portfolio specializing in PHP, MySQL, JavaScript, ASP.NET, and VB.NET desktop solutions." />
-  <meta property="og:type" content="website" />
-  <title>Gebre Maryam Gebru — Full-Stack Developer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eecJDVq/rAMRSgGNPEfGFXWLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Flaka – Full-Stack Developer portfolio showcasing projects, skills, and experience in web development." />
+  <title>Flaka | Full-Stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <header id="navbar" role="banner">
-    <div class="container nav-inner">
-      <a href="#home" class="nav-logo" id="nav-logo" aria-label="Gebre Maryam Gebru — Home">
-        Gebre<span>Maryam</span>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo">
+        <span class="logo-bracket">&lt;</span>Flaka<span class="logo-bracket">/&gt;</span>
       </a>
-
-      <nav aria-label="Primary navigation">
-        <ul class="nav-links" id="nav-links-desktop">
-          <li><a href="#home" id="nav-home">Home</a></li>
-          <li><a href="#about" id="nav-about">About</a></li>
-          <li><a href="#skills" id="nav-skills">Skills</a></li>
-          <li><a href="#projects" id="nav-projects">Projects</a></li>
-          <li><a href="#contact" id="nav-contact-link" class="nav-cta">Hire Me</a></li>
-        </ul>
-      </nav>
-
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary nav-cta" id="nav-cta-btn">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
-
-  <nav class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
-    <ul>
-      <li><a href="#home">🏠 Home</a></li>
-      <li><a href="#about">👤 About</a></li>
-      <li><a href="#skills">⚡ Skills</a></li>
-      <li><a href="#projects">🚀 Projects</a></li>
-      <li><a href="#contact">✉️ Contact</a></li>
-    </ul>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" aria-label="Hero introduction">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+
+    <div class="container hero-content">
+      <div class="hero-text" id="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">
+          <span class="name-main">Flaka</span>
+        </h1>
+        <div class="hero-role">
+          <span>I build </span>
+          <span class="typed-wrapper">
+            <span class="typed-text" id="typed-text"></span>
+            <span class="cursor">|</span>
+          </span>
+        </div>
+        <p class="hero-description">
+          Expert Web Developer specialising in <strong>HTML5, CSS3, JavaScript, PHP &amp; MySQL</strong> —
+          building dynamic, database-driven web applications from pixel-perfect UIs to solid backends.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" id="hero-projects-btn">View My Work</a>
+          <a href="#contact" class="btn btn-ghost" id="hero-contact-btn">Let's Talk</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" id="hero-visual">
+        <div class="avatar-ring">
+          <div class="avatar-container">
+            <svg class="avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#avatarGrad)" />
+              <ellipse cx="100" cy="155" rx="52" ry="38" fill="#1e1e3a" opacity="0.9"/>
+              <circle cx="100" cy="82" r="38" fill="#f5c5a3"/>
+              <ellipse cx="100" cy="52" rx="38" ry="22" fill="#2d1b69"/>
+              <rect x="62" y="52" width="76" height="20" fill="#2d1b69"/>
+              <circle cx="87" cy="82" r="5" fill="#1a1a2e"/>
+              <circle cx="113" cy="82" r="5" fill="#1a1a2e"/>
+              <circle cx="89" cy="80" r="2" fill="white"/>
+              <circle cx="115" cy="80" r="2" fill="white"/>
+              <path d="M88 93 Q100 103 112 93" fill="none" stroke="#c0846e" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M78 120 L100 135 L122 120" fill="none" stroke="#6c63ff" stroke-width="3"/>
+              <rect x="76" y="148" width="48" height="24" rx="6" fill="#6c63ff" opacity="0.9"/>
+              <text x="100" y="163" text-anchor="middle" font-family="monospace" font-size="10" fill="white">&lt;/DEV&gt;</text>
+            </svg>
+          </div>
+          <div class="ring ring-outer"></div>
+          <div class="ring ring-middle"></div>
+        </div>
+
+        <!-- Floating tech badges -->
+        <div class="tech-badge badge-1" id="badge-1">
+          <!-- HTML5 -->
+          <svg width="20" height="20" viewBox="0 0 128 128"><path fill="#E44D26" d="M19.037 113.876L9.032 1.001h109.936l-10.016 112.869-45.019 12.268z"/><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/><path fill="#ebebeb" d="M64 52.455H45.788l-1.244-13.894H64V25.394H29.038l.327 3.654 3.35 37.564H64zm0 35.488l-.061.017-15.327-4.14-.979-10.975H34.219l1.928 21.581 26.771 7.433.082-.023z"/><path fill="#fff" d="M63.952 52.455v13.167h16.947l-1.597 17.849-15.35 4.143v13.671l26.791-7.426.197-2.209 3.051-34.216.315-3.979zm0-27.061v13.167h33.244l.276-3.068.628-6.978.329-3.121z"/></svg>
+          <span>HTML5</span>
+        </div>
+        <div class="tech-badge badge-2" id="badge-2">
+          <!-- CSS3 -->
+          <svg width="20" height="20" viewBox="0 0 452 520"><path d="M0 0h452v520H0z" fill="#264de4"/><path d="M41 470L76.6 50h298.8L410 470 226 522z" fill="#2965f1"/><path d="M226 482.8l148-41 35.3-394.8H226z" fill="#ebebeb"/><path d="M226 255.5h-58.7L163 209h63v-45h-109l1.2 13.3 12.3 138.8H226zm0 141.8l-.4.1-49.3-13.3-3.2-35.6H128.7l6.2 69.4 91 25.2.1-.1z" fill="#999"/><path d="M226 255.5v45h54.4l-5.1 56.8-49.3 13.3v46.8l91.1-25.2.7-7.3 10.4-116.7 1.1-12.7H226zm0-136.5v45h106.7l.9-10.2 2-22.5 1.1-12.3H226z" fill="#fff"/></svg>
+          <span>CSS3</span>
+        </div>
+        <div class="tech-badge badge-3" id="badge-3">
+          <!-- JavaScript -->
+          <svg width="20" height="20" viewBox="0 0 630 630"><rect width="630" height="630" fill="#f7df1e"/><path d="M423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 37.93 30.45 19.3 0 31.45-7.55 31.45-36.95v-199.6h57.2v200.6c0 60.85-35.66 88.5-87.74 88.5-47.06 0-74.3-24.34-88.2-53.6z"/></svg>
+          <span>JS</span>
+        </div>
+        <div class="tech-badge badge-4" id="badge-4">
+          <!-- PHP -->
+          <svg width="20" height="20" viewBox="0 0 128 128"><path d="M0 64c0 18.593 28.654 33.67 64 33.67s64-15.077 64-33.67-28.654-33.67-64-33.67S0 45.407 0 64z" fill="#6181b6"/><path d="M38.499 44.814H53.27c5.519 0 9.437 1.303 11.754 3.91 2.312 2.607 3.092 6.187 2.34 10.741-.352 2.067-1.057 4.065-2.117 5.994-1.059 1.933-2.474 3.672-4.247 5.217-2.094 1.797-4.29 2.977-6.594 3.537-2.302.562-4.727.843-7.277.843h-6.127l-2.2 12.021H30.06zm8.854 7.228l-3.193 17.53c.22.031.44.051.66.063.22.014.44.019.66.019 3.494 0 6.38-.784 8.655-2.35 2.278-1.566 3.697-4.297 4.255-8.193.494-3.399-.068-5.694-1.682-6.887-1.614-1.193-3.89-1.19-6.827-1.182zm28.893-7.228h14.773c5.52 0 9.437 1.303 11.754 3.91 2.312 2.607 3.092 6.187 2.34 10.741-.352 2.067-1.057 4.065-2.117 5.994-1.059 1.933-2.474 3.672-4.247 5.217-2.094 1.797-4.29 2.977-6.594 3.537-2.302.562-4.727.843-7.277.843h-6.127l-2.2 12.021H67.318zm8.853 7.228l-3.193 17.53c.22.031.44.051.659.063.22.014.44.019.66.019 3.494 0 6.38-.784 8.655-2.35 2.277-1.566 3.697-4.297 4.255-8.193.494-3.399-.068-5.694-1.682-6.887-1.614-1.193-3.89-1.19-6.827-1.182z" fill="#fff"/></svg>
+          <span>PHP</span>
+        </div>
+        <div class="tech-badge badge-5" id="badge-5">
+          <!-- MySQL -->
+          <svg width="20" height="20" viewBox="0 0 128 128"><path fill="#00758f" d="M116.948 97.807c-6.863-.187-12.104.452-16.585 2.341-1.273.537-3.305.552-3.513 2.147.7.733.809 1.829 1.365 2.731 1.07 1.73 2.876 4.052 4.488 5.268 1.762 1.33 3.572 2.751 5.465 3.902 3.358 2.047 7.107 3.217 10.34 5.268 1.906 1.21 3.799 2.733 5.658 4.097.92.67 1.537 1.724 2.732 2.147v-.194c-.628-.8-.79-1.898-1.366-2.733l-2.537-2.537c-2.48-3.289-5.607-6.182-8.952-8.562-2.658-1.876-8.625-4.503-9.732-7.609l-.195-.195c1.875-.214 4.074-.889 5.854-1.367 2.933-.786 5.553-.583 8.562-1.365l4.097-1.171v-.78c-1.531-1.571-2.624-3.651-4.292-5.073-4.37-3.72-9.136-7.437-14.012-10.537-2.724-1.706-6.087-2.82-8.953-4.292-.971-.491-2.677-.746-3.318-1.562-1.518-1.932-2.35-4.382-3.513-6.633-2.45-4.717-4.868-9.868-7.023-14.799-1.482-3.403-2.45-6.768-4.293-9.732-8.86-14.568-18.396-23.358-33.168-32-3.144-1.838-6.929-2.563-10.929-3.514-2.145-.129-4.292-.26-6.437-.391-1.311-.548-2.677-2.14-3.902-2.927-4.894-3.092-17.448-9.817-21.072-.975-2.289 5.581 3.421 11.025 5.462 13.854 1.434 1.982 3.269 4.207 4.293 6.437.674 1.467.79 2.938 1.367 4.489 1.417 3.822 2.652 7.98 4.487 11.511 1.547 2.973 3.266 6.127 5.267 8.755.706.928 1.948 1.349 2.147 2.733-1.213 1.695-1.284 4.322-1.952 6.437-3.048 9.592-1.894 21.505 2.537 28.606 1.364 2.186 4.583 6.876 8.952 5.073 3.84-1.585 2.976-6.437 4.098-10.732.249-.973.096-1.681.585-2.341v.195l3.513 7.024c2.6 4.187 7.212 8.562 11.122 11.512 2.027 1.506 3.623 4.103 6.243 5.073v-.195h-.195c-.508-.791-1.303-1.119-1.951-1.755-1.527-1.497-3.225-3.358-4.489-5.073-3.556-4.827-6.698-10.11-9.537-15.58-1.368-2.627-2.557-5.524-3.709-8.172-.444-1.014-.438-2.554-1.364-3.122-1.263 1.958-3.126 3.542-4.098 5.854-1.582 3.757-1.79 8.352-2.341 13.27-.342.122-.19.038-.39.195-2.718-.655-3.672-3.452-4.683-5.853-2.554-6.07-3.029-15.842-.781-22.829.582-1.809 3.21-7.501 2.146-9.244-.508-1.666-2.184-2.63-3.121-3.903-1.161-1.574-2.319-3.646-3.124-5.464-2.09-4.731-3.066-10.044-5.267-14.8-1.053-2.278-2.832-4.585-4.294-6.634-1.617-2.252-3.429-3.912-4.683-6.635-.445-.968-1.05-2.518-.39-3.513.21-.671.507-.951 1.171-1.171 1.132-.873 4.284.29 5.462.779 3.129 1.3 5.741 2.524 8.368 4.293 1.261.844 2.542 2.476 4.097 2.927h1.756c2.747.616 5.824.187 8.367.975 4.53 1.399 8.588 3.538 12.292 5.854 11.246 7.102 20.442 17.21 26.655 29.386 1.012 1.942 1.45 3.794 2.341 5.854 1.798 4.153 4.063 8.426 5.852 12.488 1.786 4.052 3.526 8.141 6.048 11.511 1.327 1.772 6.451 2.723 8.756 3.708 1.629.678 4.273 1.366 5.854 2.341 3.154 1.979 6.199 4.315 9.146 6.635 1.487 1.165 6.07 3.716 6.34 5.586z"/></svg>
+          <span>MySQL</span>
+        </div>
+      </div>
     </div>
 
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about" id="about">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="hero-badge">Available for freelance &amp; custom software jobs</p>
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
+        <p class="section-subtitle">A passionate developer turning ideas into digital reality</p>
+      </div>
 
-          <h1 class="hero-title">
-            Hi, I'm <br />
-            <span class="gradient-text">Gebre Maryam Gebru</span>
-          </h1>
-
-          <div class="hero-typing-wrapper" aria-live="polite">
-            <span class="prefix">I build</span>
-            <span id="typed-text">Web &amp; Desktop Applications</span>
-          </div>
-
-          <p class="hero-description">
-            Full-stack developer specializing in PHP, MySQL, JavaScript, ASP.NET, and VB.NET. I design high-performance clinical management systems, enterprise portals, and customized desktop applications with integrated payment processing.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary" id="btn-view-projects">
-              <i class="fa-solid fa-rocket"></i> View Projects
-            </a>
-            <a href="#contact" class="btn btn-outline" id="btn-hire-me">
-              <i class="fa-solid fa-paper-plane"></i> Hire Me
-            </a>
-          </div>
-
-          <div class="hero-stats" aria-label="Key statistics">
-            <div class="stat-item">
-              <span class="stat-num" data-target="4" data-suffix="+">0+</span>
-              <span class="stat-label">Production Apps</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num" data-target="100" data-suffix="%">0%</span>
-              <span class="stat-label">Client Satisfaction</span>
+      <div class="about-content">
+        <div class="about-image" id="about-image">
+          <div class="about-img-wrap">
+            <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" class="about-illustration">
+              <defs>
+                <linearGradient id="bgCircle" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:0.15"/>
+                  <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.08"/>
+                </linearGradient>
+              </defs>
+              <circle cx="200" cy="210" r="185" fill="url(#bgCircle)" />
+              <!-- Desk -->
+              <rect x="40" y="310" width="320" height="12" rx="6" fill="#2d2d5e"/>
+              <rect x="60" y="322" width="12" height="70" rx="4" fill="#2d2d5e"/>
+              <rect x="328" y="322" width="12" height="70" rx="4" fill="#2d2d5e"/>
+              <!-- Monitor -->
+              <rect x="90" y="165" width="220" height="145" rx="10" fill="#1e1e3a"/>
+              <rect x="97" y="172" width="206" height="131" rx="6" fill="#0d0d1f"/>
+              <!-- Code on screen -->
+              <rect x="112" y="188" width="70" height="6" rx="3" fill="#6c63ff"/>
+              <rect x="122" y="203" width="110" height="5" rx="2" fill="#00d4ff" opacity="0.7"/>
+              <rect x="122" y="216" width="80" height="5" rx="2" fill="#a78bfa" opacity="0.7"/>
+              <rect x="132" y="229" width="55" height="5" rx="2" fill="#34d399" opacity="0.7"/>
+              <rect x="122" y="242" width="95" height="5" rx="2" fill="#00d4ff" opacity="0.5"/>
+              <rect x="112" y="255" width="60" height="5" rx="2" fill="#6c63ff" opacity="0.7"/>
+              <rect x="112" y="268" width="45" height="6" rx="3" fill="#f59e0b" opacity="0.7"/>
+              <!-- Cursor blink -->
+              <rect x="160" y="268" width="2" height="12" rx="1" fill="#00d4ff" opacity="0.9"/>
+              <!-- Stand -->
+              <rect x="185" y="310" width="30" height="16" rx="3" fill="#2d2d5e"/>
+              <rect x="165" y="323" width="70" height="8" rx="4" fill="#2d2d5e"/>
+              <!-- Keyboard -->
+              <rect x="115" y="335" width="170" height="38" rx="5" fill="#1e1e3a"/>
+              <rect x="122" y="341" width="156" height="25" rx="3" fill="#252545"/>
+              <rect x="128" y="346" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="145" y="346" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="162" y="346" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="179" y="346" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="196" y="346" width="12" height="7" rx="2" fill="#6c63ff" opacity="0.9"/>
+              <rect x="213" y="346" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="230" y="346" width="20" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="128" y="358" width="18" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="151" y="358" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="168" y="358" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="185" y="358" width="12" height="7" rx="2" fill="#2d2d5e"/>
+              <rect x="202" y="358" width="40" height="7" rx="2" fill="#2d2d5e"/>
+              <!-- Mouse -->
+              <rect x="300" y="338" width="36" height="46" rx="18" fill="#1e1e3a"/>
+              <line x1="318" y1="338" x2="318" y2="362" stroke="#2d2d5e" stroke-width="2"/>
+              <!-- Mug -->
+              <rect x="55" y="287" width="34" height="28" rx="5" fill="#2d2d5e"/>
+              <path d="M89 296 Q100 296 100 307 Q100 318 89 318" fill="none" stroke="#2d2d5e" stroke-width="3.5"/>
+              <rect x="58" y="283" width="28" height="7" rx="3.5" fill="#6c63ff" opacity="0.5"/>
+              <!-- Plant -->
+              <rect x="310" y="293" width="34" height="20" rx="3" fill="#7c4b3a"/>
+              <ellipse cx="327" cy="293" rx="17" ry="8" fill="#5a3526"/>
+              <path d="M327 275 Q312 260 308 244" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M327 275 Q342 260 348 244" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linecap="round"/>
+              <ellipse cx="307" cy="241" rx="12" ry="7" fill="#22c55e" opacity="0.85"/>
+              <ellipse cx="349" cy="241" rx="12" ry="7" fill="#22c55e" opacity="0.85"/>
+              <!-- Floating icons -->
+              <rect x="50" y="100" width="60" height="38" rx="8" fill="#6c63ff" opacity="0.18"/>
+              <text x="80" y="122" text-anchor="middle" font-family="monospace" font-size="13" fill="#6c63ff">&lt;/&gt;</text>
+              <rect x="295" y="90" width="55" height="38" rx="8" fill="#00d4ff" opacity="0.12"/>
+              <text x="322" y="113" text-anchor="middle" font-family="monospace" font-size="11" fill="#00d4ff">{ }</text>
+              <rect x="155" y="55" width="90" height="36" rx="8" fill="#a78bfa" opacity="0.15"/>
+              <text x="200" y="77" text-anchor="middle" font-family="monospace" font-size="11" fill="#a78bfa">npm start</text>
+            </svg>
+            <div class="about-exp-badge">
+              <span class="exp-number">3+</span>
+              <span class="exp-label">Years of<br/>Experience</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-avatar-wrap">
-            <div class="avatar-glow"></div>
-            <div class="avatar-ring"><div class="avatar-ring-inner"></div></div>
-            <img src="avatar.jpg" alt="Gebre Maryam Gebru" class="avatar-img" width="380" height="380" />
-            <div class="hero-chip chip-php"><i class="fa-brands fa-php"></i> PHP</div>
-            <div class="hero-chip chip-cs">🗄️ MySQL</div>
-            <div class="hero-chip chip-net">⚙️ VB.NET</div>
-            <div class="hero-chip chip-sql">⚡ JS / AJAX</div>
+        <div class="about-text" id="about-text">
+          <h3 class="about-heading">Expert in HTML5, CSS3, JS, PHP &amp; MySQL.</h3>
+          <p class="about-desc">
+            I'm <strong>Flaka</strong>, a passionate web developer with deep expertise in the core technologies
+            of the web. I craft pixel-perfect, responsive interfaces with <strong>HTML5 &amp; CSS3</strong>,
+            bring them to life with <strong>JavaScript</strong>, and power them with <strong>PHP</strong>
+            backends connected to <strong>MySQL</strong> databases.
+          </p>
+          <p class="about-desc">
+            From dynamic web apps and clinic management systems to job board platforms — I build
+            real-world solutions with clean, maintainable code and a focus on performance &amp; UX.
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-value">Available Worldwide</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">💼</span>
+              <div>
+                <span class="info-label">Status</span>
+                <span class="info-value status-available">Open to Work</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🎓</span>
+              <div>
+                <span class="info-label">Specialty</span>
+                <span class="info-value">PHP &amp; MySQL Dev</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🌐</span>
+              <div>
+                <span class="info-label">Languages</span>
+                <span class="info-value">Albanian, English</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-primary" id="about-contact-btn">Get In Touch</a>
+            <a href="#" class="btn btn-ghost" id="about-cv-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
-  <section id="projects" aria-label="Featured projects">
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills" id="skills">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Portfolio</span>
-        <h2 class="section-title">Featured <span>Projects</span></h2>
-        <p class="section-subtitle">
-          Real-world full-stack web platforms and desktop applications engineered for high efficiency.
-        </p>
+      <div class="section-header">
+        <span class="section-tag">My Toolkit</span>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+        <p class="section-subtitle">Technologies I use to craft exceptional digital experiences</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category" id="skill-frontend">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-info"><span>HTML5 — Semantic Markup</span><span>97%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 97%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>CSS3 — Layouts &amp; Animations</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 95%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>JavaScript (ES6+)</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 92%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>Responsive Design</span><span>96%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 96%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category" id="skill-backend">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-info"><span>PHP — Core &amp; OOP</span><span>93%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 93%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>PHP — Sessions, Auth, APIs</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 90%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>Server-Side Scripting</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 88%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>AJAX &amp; Fetch / JSON</span><span>91%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 91%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category" id="skill-database">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3>Database</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-info"><span>MySQL — Queries &amp; Design</span><span>94%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 94%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>Joins, Views &amp; Stored Procs</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 88%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>PHP &amp; MySQLi / PDO</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 92%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>Database Optimization</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 85%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category" id="skill-tools">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Tools &amp; DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-info"><span>XAMPP / Apache</span><span>96%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 96%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>Git / GitHub</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 88%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>VS Code</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 95%"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><span>phpMyAdmin</span><span>94%</span></div><div class="skill-bar"><div class="skill-fill" style="--target: 94%"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-pills" id="tech-pills">
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">PHP</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">AJAX</span>
+        <span class="pill">JSON</span>
+        <span class="pill">MySQLi</span>
+        <span class="pill">PDO</span>
+        <span class="pill">phpMyAdmin</span>
+        <span class="pill">XAMPP</span>
+        <span class="pill">Apache</span>
+        <span class="pill">Git</span>
+        <span class="pill">Responsive Design</span>
+        <span class="pill">REST APIs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Real-world applications I've designed and built from scratch</p>
       </div>
 
       <div class="projects-grid">
-
-        <!-- Project 1: Ethiopian Police University Clinic Management System -->
-        <article class="project-card reveal reveal-delay-1">
-          <div class="project-img-wrap">
-            <img src="project-gateway.jpg" alt="Ethiopian Police University Clinic Management System" loading="lazy" width="600" height="338" />
-            <div class="project-img-overlay"></div>
-            <div class="project-img-actions">
-              <a href="#contact" class="project-img-btn"><i class="fa-solid fa-info-circle"></i> Details</a>
+        <!-- Project 1: EPU Clinic -->
+        <div class="project-card" id="project-clinic">
+          <div class="project-image">
+            <img src="assets/img/epu_clinic.jpg" alt="EPU Clinic Dashboard – Healthcare management system" loading="lazy" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" id="clinic-demo-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+                <a href="#" class="project-link project-link-ghost" id="clinic-code-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  GitHub
+                </a>
+              </div>
             </div>
+            <div class="project-badge">Healthcare</div>
           </div>
-          <div class="project-body">
-            <p class="project-number">PROJECT — 01</p>
-            <h3 class="project-title">EPU Clinic Management System</h3>
-            <p class="project-desc">
-              Comprehensive web system for managing patient records, diagnostic tracking, doctor scheduling, and session security using PHP, MySQL, and session architecture.
+          <div class="project-info">
+            <h3 class="project-title">EPU Clinic Dashboard</h3>
+            <p class="project-description">
+              A comprehensive healthcare management system featuring patient records, appointment calendars,
+              staff management, billing, and real-time analytics — all in a sleek, intuitive dashboard.
             </p>
             <div class="project-tags">
-              <span class="project-tag">PHP</span>
-              <span class="project-tag teal">MySQL</span>
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag teal">XAMPP</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                2024
+              </span>
+              <span class="meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Full-Stack
+              </span>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Project 2: Youth Employment Job Board -->
-        <article class="project-card reveal reveal-delay-2">
-          <div class="project-img-wrap">
-            <img src="project-jobboard.jpg" alt="Youth Employment Job Board Platform" loading="lazy" width="600" height="338" />
-            <div class="project-img-overlay"></div>
-            <div class="project-img-actions">
-              <a href="http://youthjobboard.kesug.com" target="_blank" class="project-img-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+        <!-- Project 2: Job Board -->
+        <div class="project-card project-card-featured" id="project-jobboard">
+          <div class="project-image">
+            <img src="assets/img/job_board.jpg" alt="Workforce Job Board – Job listing and freelancer platform" loading="lazy" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" id="jobboard-demo-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+                <a href="#" class="project-link project-link-ghost" id="jobboard-code-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  GitHub
+                </a>
+              </div>
             </div>
+            <div class="project-badge project-badge-featured">Featured</div>
           </div>
-          <div class="project-body">
-            <p class="project-number">PROJECT — 02</p>
-            <h3 class="project-title">Youth Employment Job Board</h3>
-            <p class="project-desc">
-              Web job matching system featuring freelance project posting, candidate application management, and integrated online video interview sessions via embedded Jitsi Meet.
+          <div class="project-info">
+            <h3 class="project-title">Workforce — Job Board Platform</h3>
+            <p class="project-description">
+              A modern job marketplace connecting employers and freelancers. Features advanced job search,
+              candidate tracking dashboards (Kanban), freelancer profiles, skill-based matching, and real-time insights.
             </p>
             <div class="project-tags">
-              <span class="project-tag">PHP</span>
-              <span class="project-tag teal">MySQL</span>
-              <span class="project-tag">Jitsi API</span>
-              <span class="project-tag teal">Bootstrap</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">CSS3</span>
+            </div>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                2025
+              </span>
+              <span class="meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Full-Stack
+              </span>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Project 3: Pharmacy Management System -->
-        <article class="project-card reveal reveal-delay-3">
-          <div class="project-img-wrap">
-            <img src="project-android.jpg" alt="Pharmacy Management System" loading="lazy" width="600" height="338" />
-            <div class="project-img-overlay"></div>
-          </div>
-          <div class="project-body">
-            <p class="project-number">PROJECT — 03</p>
-            <h3 class="project-title">Pharmacy Management System</h3>
-            <p class="project-desc">
-              Database-driven management application tracking medicine inventory, stock expiration alerts, automated billing, and sales analytics reports.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag pink">VB.NET / C#</span>
-              <span class="project-tag">SQL Server</span>
-              <span class="project-tag teal">WinForms</span>
+        <!-- Project 3: More card -->
+        <div class="project-card project-card-more" id="project-more">
+          <div class="project-more-inner">
+            <div class="more-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
             </div>
+            <h3>More Coming Soon</h3>
+            <p>I'm always building. Check back for new projects, or reach out to collaborate!</p>
+            <a href="#contact" class="btn btn-primary btn-sm" id="collab-btn">Let's Collaborate</a>
           </div>
-        </article>
-
-        <!-- Project 4: Amhara Industry and Investment Bureau Website -->
-        <article class="project-card reveal reveal-delay-4">
-          <div class="project-img-wrap">
-            <img src="project-gateway.jpg" alt="Amhara Industry and Investment Bureau Portal" loading="lazy" width="600" height="338" />
-            <div class="project-img-overlay"></div>
-          </div>
-          <div class="project-body">
-            <p class="project-number">PROJECT — 04</p>
-            <h3 class="project-title">Amhara Industry &amp; Investment Portal</h3>
-            <p class="project-desc">
-              Official localized public web portal with structured bilingual navigational access, investment service directory, and institutional public resources.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">HTML5/CSS3</span>
-              <span class="project-tag teal">JavaScript</span>
-              <span class="project-tag">PHP</span>
-            </div>
-          </div>
-        </article>
-
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer role="contentinfo">
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
     <div class="container">
-      <div class="footer-inner">
-        <a href="#home" class="footer-logo">GebreMaryam.dev</a>
-        <p class="footer-text">
-          &copy; <span id="footer-year">2026</span> Gebre Maryam Gebru. All rights reserved.
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-subtitle">Have a project in mind? Let's build something amazing together.</p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-info" id="contact-info">
+          <h3 class="contact-heading">Ready to start your project?</h3>
+          <p class="contact-desc">
+            I'm currently open to new opportunities — freelance projects, full-time positions,
+            or just an interesting conversation. Don't hesitate to reach out!
+          </p>
+
+          <div class="contact-methods">
+            <a href="mailto:flaka@example.com" class="contact-method" id="email-link">
+              <div class="method-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="method-text">
+                <span class="method-label">Email</span>
+                <span class="method-value">flaka@example.com</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-method" id="github-link">
+              <div class="method-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div class="method-text">
+                <span class="method-label">GitHub</span>
+                <span class="method-value">github.com/flaka</span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-method" id="linkedin-link">
+              <div class="method-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="method-text">
+                <span class="method-label">LinkedIn</span>
+                <span class="method-value">linkedin.com/in/flaka</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="contact-availability">
+            <div class="availability-dot"></div>
+            <span>Available for freelance &amp; full-time opportunities</span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="John Doe" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" placeholder="Project Inquiry" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="contact-submit-btn">
+            <span class="btn-text">Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <div class="form-success" id="form-success">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#home" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>Flaka<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">
+          Crafted with <span class="heart">♥</span> by Flaka &copy; <span id="footer-year"></span>
         </p>
+        <div class="footer-socials">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" id="footer-github" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" id="footer-linkedin" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:flaka@example.com" class="social-link" id="footer-email" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
