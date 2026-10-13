@@ -177,6 +177,7 @@ window.addEventListener('scroll', animateSkills);
 animateSkills();
 
 // ─── Contact form ─────────────────────────────────────────────────────────────
+// ─── Contact form with EmailJS ────────────────────────────────────────────────
 const contactForm    = document.getElementById('contact-form');
 const formSuccess    = document.getElementById('form-success');
 const submitBtn      = document.getElementById('contact-submit-btn');
@@ -200,35 +201,29 @@ contactForm.addEventListener('submit', (e) => {
     return;
   }
 
-  // Simulate sending
+  // Loading state
   submitBtnText.textContent = 'Sending…';
   submitBtn.disabled = true;
 
-  setTimeout(() => {
-    submitBtnText.textContent = 'Send Message';
-    submitBtn.disabled = false;
-    formSuccess.classList.add('show');
-    contactForm.reset();
-    setTimeout(() => formSuccess.classList.remove('show'), 5000);
-  }, 1500);
+  // EmailJS IDs (ከእርስዎ ዳሽቦርድ የወሰዷቸው)
+  const serviceID = 'service_ppzv28s';
+  const templateID = 'template_5t3bucn';
+
+  // Form በመጠቀም በቀጥታ መላክ
+  emailjs.sendForm(serviceID, templateID, contactForm)
+    .then(() => {
+      submitBtnText.textContent = 'Send Message';
+      submitBtn.disabled = false;
+      formSuccess.classList.add('show');
+      contactForm.reset();
+      setTimeout(() => formSuccess.classList.remove('show'), 5000);
+    }, (error) => {
+      submitBtnText.textContent = 'Send Message';
+      submitBtn.disabled = false;
+      alert('Failed to send message. Please try again later.');
+      console.error('EmailJS Error:', error);
+    });
 });
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function highlightField(el) {
-  el.style.borderColor = '#ec4899';
-  el.focus();
-  setTimeout(() => (el.style.borderColor = ''), 2000);
-}
-
-function shakeForm() {
-  contactForm.style.animation = 'none';
-  contactForm.offsetHeight; // reflow
-  contactForm.style.animation = 'shake 0.4s ease';
-}
-
 // Shake keyframe via JS
 const shakeStyle = document.createElement('style');
 shakeStyle.textContent = `
