@@ -233,8 +233,7 @@ shakeStyle.textContent = `
     40%{transform:translateX(8px)}
     60%{transform:translateX(-5px)}
     80%{transform:translateX(5px)}
-  }
-`;
+  }`;
 document.head.appendChild(shakeStyle);
 
 // ─── Back to top ─────────────────────────────────────────────────────────────
