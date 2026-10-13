@@ -177,12 +177,6 @@ window.addEventListener('scroll', animateSkills);
 animateSkills();
 
 // ─── Contact form ─────────────────────────────────────────────────────────────
-// ─── Contact form with EmailJS ────────────────────────────────────────────────
-const contactForm    = document.getElementById('contact-form');
-const formSuccess    = document.getElementById('form-success');
-const submitBtn      = document.getElementById('contact-submit-btn');
-const submitBtnText  = submitBtn.querySelector('.btn-text');
-
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -201,40 +195,35 @@ contactForm.addEventListener('submit', (e) => {
     return;
   }
 
-  // Loading state
+  // Set loading state & disable button
   submitBtnText.textContent = 'Sending…';
   submitBtn.disabled = true;
 
-  // EmailJS IDs (ከእርስዎ ዳሽቦርድ የወሰዷቸው)
   const serviceID = 'service_ppzv28s';
   const templateID = 'template_5t3bucn';
 
-  // Form በመጠቀም በቀጥታ መላክ
-  emailjs.sendForm(serviceID, templateID, contactForm)
-    .then(() => {
-      submitBtnText.textContent = 'Send Message';
-      submitBtn.disabled = false;
-      formSuccess.classList.add('show');
-      contactForm.reset();
-      setTimeout(() => formSuccess.classList.remove('show'), 5000);
-    }, (error) => {
-      submitBtnText.textContent = 'Send Message';
-      submitBtn.disabled = false;
-      alert('Failed to send message. Please try again later.');
-      console.error('EmailJS Error:', error);
-    });
-});
-// Shake keyframe via JS
-const shakeStyle = document.createElement('style');
-shakeStyle.textContent = `
-  @keyframes shake {
-    0%,100%{transform:translateX(0)}
-    20%{transform:translateX(-8px)}
-    40%{transform:translateX(8px)}
-    60%{transform:translateX(-5px)}
-    80%{transform:translateX(5px)}
-  }`;
-document.head.appendChild(shakeStyle);
+  try {
+    emailjs.sendForm(serviceID, templateID, contactForm)
+      .then(() => {
+        submitBtnText.textContent = 'Send Message';
+        submitBtn.disabled = false; // Re-enable button on success
+        formSuccess.classList.add('show');
+        contactForm.reset();
+        setTimeout(() => formSuccess.classList.remove('show'), 5000);
+      })
+      .catch((error) => {
+        submitBtnText.textContent = 'Send Message';
+        submitBtn.disabled = false; // Re-enable button on EmailJS error
+        alert('Failed to send message. Please try again later.');
+        console.error('EmailJS Error:', error);
+      });
+  } catch (err) {
+    // Fallback if emailjs is not loaded at all
+    submitBtnText.textContent = 'Send Message';
+    submitBtn.disabled = false; // Re-enable button on script crash
+    alert('EmailJS library is not loaded properly.');
+    console.error('Script Error:', err);
+  }
 
 // ─── Back to top ─────────────────────────────────────────────────────────────
 const backToTopBtn = document.getElementById('back-to-top');
