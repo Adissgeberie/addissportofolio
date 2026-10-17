@@ -17,18 +17,20 @@ const hamburger  = document.getElementById('hamburger');
 const navLinks   = document.getElementById('nav-links');
 const navCta     = document.querySelector('.nav-cta');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('mobile-open');
-});
-
-// Close mobile menu on link click
-navLinks.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('mobile-open');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
   });
-});
+
+  // Close mobile menu on link click
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+    });
+  });
+}
 
 // ─── Active nav link on scroll ───────────────────────────────────────────────
 const sections  = document.querySelectorAll('section[id]');
@@ -63,6 +65,7 @@ let deleting  = false;
 let typingTimeout;
 
 function typeLoop() {
+  if (!typedEl) return;
   const current = phrases[phraseIdx];
 
   if (deleting) {
@@ -86,13 +89,14 @@ function typeLoop() {
     typingTimeout = setTimeout(typeLoop, 90);
   }
 }
-typeLoop();
+if (typedEl) typeLoop();
 
 // ─── Particle system ─────────────────────────────────────────────────────────
 const particlesContainer = document.getElementById('particles');
 const PARTICLE_COUNT = 28;
 
 function createParticle() {
+  if (!particlesContainer) return;
   const p     = document.createElement('div');
   p.className = 'particle';
   const size  = Math.random() * 4 + 2;
@@ -110,7 +114,9 @@ function createParticle() {
   particlesContainer.appendChild(p);
 }
 
-for (let i = 0; i < PARTICLE_COUNT; i++) createParticle();
+if (particlesContainer) {
+  for (let i = 0; i < PARTICLE_COUNT; i++) createParticle();
+}
 
 // ─── Counter animation ───────────────────────────────────────────────────────
 const counters  = document.querySelectorAll('.stat-number');
@@ -119,6 +125,7 @@ let countersRan = false;
 function animateCounters() {
   if (countersRan) return;
   const heroSection = document.getElementById('home');
+  if (!heroSection) return;
   const rect = heroSection.getBoundingClientRect();
   if (rect.top < window.innerHeight) {
     countersRan = true;
@@ -136,7 +143,7 @@ function animateCounters() {
   }
 }
 window.addEventListener('scroll', animateCounters);
-animateCounters(); // run on load too
+animateCounters();
 
 // ─── Scroll reveal ───────────────────────────────────────────────────────────
 const revealEls = document.querySelectorAll(
@@ -176,68 +183,108 @@ function animateSkills() {
 window.addEventListener('scroll', animateSkills);
 animateSkills();
 
+// ─── Helper Validation Functions ─────────────────────────────────────────────
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function highlightField(field) {
+  if (!field) return;
+  field.style.borderColor = '#ef4444';
+  field.focus();
+  setTimeout(() => {
+    field.style.borderColor = '';
+  }, 3000);
+}
+
+function shakeForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.classList.add('shake');
+  setTimeout(() => form.classList.remove('shake'), 600);
+}
+
 // ─── Contact form ─────────────────────────────────────────────────────────────
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+const contactForm   = document.getElementById('contact-form');
+const submitBtn     = document.getElementById('contact-submit-btn');
+const submitBtnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+const formSuccess   = document.getElementById('form-success');
 
-  const name    = document.getElementById('contact-name').value.trim();
-  const email   = document.getElementById('contact-email').value.trim();
-  const subject = document.getElementById('contact-subject').value.trim();
-  const message = document.getElementById('contact-message').value.trim();
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  // Basic validation
-  if (!name || !email || !subject || !message) {
-    shakeForm();
-    return;
-  }
-  if (!isValidEmail(email)) {
-    highlightField(document.getElementById('contact-email'));
-    return;
-  }
+    const name    = document.getElementById('contact-name').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
 
-  // Set loading state & disable button
-  submitBtnText.textContent = 'Sending…';
-  submitBtn.disabled = true;
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+      shakeForm();
+      return;
+    }
+    if (!isValidEmail(email)) {
+      highlightField(document.getElementById('contact-email'));
+      return;
+    }
 
-  const serviceID = 'service_ppzv28s';
-  const templateID = 'template_5t3bucn';
+    // Set loading state & disable button
+    if (submitBtnText) submitBtnText.textContent = 'Sending…';
+    if (submitBtn) submitBtn.disabled = true;
 
-  try {
-    emailjs.sendForm(serviceID, templateID, contactForm)
-      .then(() => {
-        submitBtnText.textContent = 'Send Message';
-        submitBtn.disabled = false; // Re-enable button on success
-        formSuccess.classList.add('show');
-        contactForm.reset();
-        setTimeout(() => formSuccess.classList.remove('show'), 5000);
-      })
-      .catch((error) => {
-        submitBtnText.textContent = 'Send Message';
-        submitBtn.disabled = false; // Re-enable button on EmailJS error
-        alert('Failed to send message. Please try again later.');
-        console.error('EmailJS Error:', error);
-      });
-  } catch (err) {
-    // Fallback if emailjs is not loaded at all
-    submitBtnText.textContent = 'Send Message';
-    submitBtn.disabled = false; // Re-enable button on script crash
-    alert('EmailJS library is not loaded properly.');
-    console.error('Script Error:', err);
-  }
+    const serviceID  = 'service_ppzv28s';
+    const templateID = 'template_5t3bucn';
+
+    try {
+      emailjs.sendForm(serviceID, templateID, contactForm)
+        .then(() => {
+          if (submitBtnText) submitBtnText.textContent = 'Send Message';
+          if (submitBtn) submitBtn.disabled = false;
+          if (formSuccess) {
+            formSuccess.style.display = 'flex';
+            formSuccess.classList.add('show');
+          }
+          contactForm.reset();
+          setTimeout(() => {
+            if (formSuccess) formSuccess.classList.remove('show');
+          }, 5000);
+        })
+        .catch((error) => {
+          if (submitBtnText) submitBtnText.textContent = 'Send Message';
+          if (submitBtn) submitBtn.disabled = false;
+          alert('Failed to send message. Please try again later.');
+          console.error('EmailJS Error:', error);
+        });
+    } catch (err) {
+      if (submitBtnText) submitBtnText.textContent = 'Send Message';
+      if (submitBtn) submitBtn.disabled = false;
+      alert('EmailJS library is not loaded properly.');
+      console.error('Script Error:', err);
+    }
+  });
+}
 
 // ─── Back to top ─────────────────────────────────────────────────────────────
 const backToTopBtn = document.getElementById('back-to-top');
 
 function toggleBackToTop() {
-  backToTopBtn.classList.toggle('visible', window.scrollY > 500);
+  if (backToTopBtn) {
+    backToTopBtn.classList.toggle('visible', window.scrollY > 500);
+  }
 }
 
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // ─── Footer year ─────────────────────────────────────────────────────────────
-document.getElementById('footer-year').textContent = new Date().getFullYear();
+const footerYearEl = document.getElementById('footer-year');
+if (footerYearEl) {
+  footerYearEl.textContent = new Date().getFullYear();
+}
 
 // ─── Smooth scroll for all anchor links ─────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
