@@ -360,4 +360,29 @@ window.addEventListener('load', () => {
   requestAnimationFrame(() => {
     document.body.style.opacity = '1';
   });
+});// Ensure emailjs is initialized globally before calling sendForm
+emailjs.init({
+  publicKey: "slAyt87oI378Ebv_X",
 });
+
+const contactForm = document.getElementById('contact-form');
+const submitBtn   = document.getElementById('contact-submit-btn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    emailjs.sendForm('service_ppzv28s', 'template_5t3bucn', this)
+      .then(function () {
+        alert('Message sent successfully!');
+        contactForm.reset();
+        if (submitBtn) submitBtn.disabled = false;
+      })
+      .catch(function (error) {
+        alert('Error: ' + JSON.stringify(error));
+        if (submitBtn) submitBtn.disabled = false;
+      });
+  });
+}
