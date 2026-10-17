@@ -236,8 +236,15 @@ if (contactForm) {
     const serviceID  = 'service_ppzv28s';
     const templateID = 'template_5t3bucn';
 
+    const templateParams = {
+      from_name: name,
+      reply_to: email,
+      subject: subject,
+      message: message,
+    };
+
     try {
-      emailjs.sendForm(serviceID, templateID, contactForm)
+      emailjs.send(serviceID, templateID, templateParams)
         .then(() => {
           if (submitBtnText) submitBtnText.textContent = 'Send Message';
           if (submitBtn) submitBtn.disabled = false;
@@ -253,7 +260,7 @@ if (contactForm) {
         .catch((error) => {
           if (submitBtnText) submitBtnText.textContent = 'Send Message';
           if (submitBtn) submitBtn.disabled = false;
-          alert('Failed to send message. Please try again later.');
+          alert('Failed to send message. Please check browser console for error details.');
           console.error('EmailJS Error:', error);
         });
     } catch (err) {
@@ -264,7 +271,6 @@ if (contactForm) {
     }
   });
 }
-
 // ─── Back to top ─────────────────────────────────────────────────────────────
 const backToTopBtn = document.getElementById('back-to-top');
 
